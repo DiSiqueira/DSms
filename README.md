@@ -36,6 +36,7 @@ Ainda não
 ```bash
 $ git clone https://github.com/DiSiqueira/DSms.git
 $ cd DSms/
+$ pip3 install requests
 $ python3.5 setup.py install
 ```
 
