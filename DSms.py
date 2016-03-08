@@ -3,7 +3,7 @@
 """
 Diego Martins de Siqueira
 MIT License
-DSms - Send an SMS to a friend
+DSms - Envie um SMS para seu amigo que utiliza a operadora VIVO
 """
 
 import argparse
@@ -14,17 +14,17 @@ import requests
 
 
 def main():
-    description = "Send an SMS to a friend"
+    description = "Envie um SMS para seu amigo que utiliza a operadora VIVO"
     parser = argparse.ArgumentParser(
         description=description)
     parser.add_argument("--version", action="version", version='0.0.0.1',
                         help="Version Info")
     parser.add_argument("--number", type=int, default=5,
-                        help="Number of SMSs to be sent. The default is 5.")
+                        help="Numero de SMSs que voce deseja enviar. O padrao e 5.")
     parser.add_argument('friendNumber', type=int,
-                        help='Your friend number')
+                        help='Numero do celular de seu amigo, com DDD')
     parser.add_argument("-v", "--verbose", action="store_true",
-                        help="increase output verbosity")
+                        help="Increase output verbosity")
 
     args = parser.parse_args()
 
@@ -78,12 +78,15 @@ def main():
         logging.debug('Headers: ' + str(headers))
         logging.debug('Params Request END')
 
+        print("Enviando SMSs para: " + str(args.friendNumber))
         for sms in range(args.number):
             logging.debug('Starting Request')
             requests.post(url, data=data, headers=headers)
             logging.debug('Request finished')
             logging.debug('SMS sent')
-            print("SMS Sent")
+            print("SMS enviado")
+
+        print("Todos SMSs foram enviados")
 
     except KeyboardInterrupt:
         print('Interrupt received, stopping SMSs')
