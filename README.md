@@ -45,7 +45,7 @@ $ python3.5 setup.py install
 
 ```bash
 # Envie um SMS
-$ python3.5 DSms.py 14998761234 --number 1
+$ python3.5 DSms.py 14999999999 --number 1
 ```
 
 ## Program Help
