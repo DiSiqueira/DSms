@@ -48,7 +48,7 @@ def main():
     -H 'Accept-Language: en-us' 
     -H 'Accept-Encoding: gzip, deflate' 
     -H 'Content-Length: 219' 
-    --data-binary '{"body": { "msisdn": "14996059889" }, "head": { "appType": "1", "appVersion": "3.5",
+    --data-binary '{"body": { "msisdn": "14999999999" }, "head": { "appType": "1", "appVersion": "3.5",
                     "deviceCode": "3E2A9", "deviceType": "13", "sessionId": "" } }'
     --verbose
     """
